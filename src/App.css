@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #2fdf1f;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +35,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.colorInput{
+  width: 20%;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  padding: 0 10px;
 }

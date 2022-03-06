@@ -1,22 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import { useSelector, useDispatch } from 'react-redux'
+
+//actions
+import { setColorValue } from './Action/index'
 
 function App() {
+  const BackgroundColorChange = useSelector(state => state.BackgroundColorChange)
+  const dispatch =  useDispatch()
+  const onTextChange = (e)=>{
+    dispatch(setColorValue(e.target.value))
+  }
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header" style={{backgroundColor: BackgroundColorChange}}>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Created By Soumyadeep Mondal
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h5 style={{margin:'7px 5px'}}>
+          Test Your Color
+        </h5>
+        <input type='text' onChange={onTextChange} placeholder='Enter Background color' className='colorInput'/>
       </header>
     </div>
   );
